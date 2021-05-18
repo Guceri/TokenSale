@@ -3,10 +3,11 @@
 ## Tokenize Project
 Major Topics:
  - extended use of openzeppelin contracts (ownable, crowdsale, ERC20, IERC20)
- - worked with newer ERC20 contract functionality ( ie. _mint() )
- - introduce the idea of crowdsale contracts for token distribution 
+ - modified code for *solidity ^0.8.0*
+ - worked with new-ish ERC20 contract functionality ( ie. _mint() )
+ - introduce the idea of ***crowd sale*** contracts for token distribution 
  - reinforce & practice contract inheritance, overriding functions (use of super)
- - working with .new() and .deployed() within test scripts
+ - working with **.new()** and **.deployed()** within test scripts
 
  ## Design
 
