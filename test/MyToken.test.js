@@ -10,11 +10,12 @@ const EVM_REVERT = 'VM Exception while processing transaction: revert'
 contract("MyToken", async ([deployer,receiver]) => {
   let myToken, totalSupply, init_owner_balance
 
-  //hook to run before the first 'describe' (will not renew state for each "it")
+  //hook to run before the first 'describe' (will NOT renew state for each "it")
   before ( async() => {
-    myToken = await MyToken.new(process.env.INITIAL_TOKENS)//creates a new instance 
+    //creates a new instance (not the deployed version which could have changed state)
+    myToken = await MyToken.new(process.env.INITIAL_TOKENS)
     totalSupply = await myToken.totalSupply()
-    init_owner_balance = await myToken.balanceOf(deployer)
+    init_owner_balance = await myToken.balanceOf(deployer)//1,000,000
   })
 
   describe('deployment', async () => {
@@ -31,7 +32,7 @@ contract("MyToken", async ([deployer,receiver]) => {
     })
 
     it("should not be able to send more tokens then available", async () => {
-      //we transfered 1 token above, deployer is starting with 999,999
+      //we transfered 1 token above, deployer has 999,999 but we are trying to transfer 1,000,000
       await myToken.transfer(receiver, init_owner_balance, {from: deployer}).should.be.rejectedWith(EVM_REVERT)
     })
   
