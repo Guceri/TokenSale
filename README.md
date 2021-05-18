@@ -11,7 +11,7 @@ Major Topics:
 
  ## Design
 
-![](public/Token_Sale.png)
+![](public/Token_Sale.jpeg)
 
  ## UI
 
