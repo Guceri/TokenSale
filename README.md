@@ -11,7 +11,7 @@ Major Topics:
 
  ## Design
 
-INSERT FLOW CHART HERE
+![](public.Token_sale.png)
 
  ## UI
 
