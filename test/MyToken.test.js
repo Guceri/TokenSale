@@ -1,20 +1,18 @@
-const { assert } = require('chai')
-
 const MyToken = artifacts.require("MyToken")
-//web3 is automatically injected into truffle tests
-
 require('chai')
   .use(require('chai-as-promised'))
   .should()
-
+  .assert
+require('dotenv').config();
 const EVM_REVERT = 'VM Exception while processing transaction: revert'
 
+//web3 is automatically injected into truffle tests
 contract("MyToken", async ([deployer,receiver]) => {
   let myToken, totalSupply, init_owner_balance
 
   //hook to run before the first 'describe' (will not renew state for each "it")
   before ( async() => {
-    myToken = await MyToken.new(1000000)
+    myToken = await MyToken.new(process.env.INITIAL_TOKENS)//creates a new instance 
     totalSupply = await myToken.totalSupply()
     init_owner_balance = await myToken.balanceOf(deployer)
   })
