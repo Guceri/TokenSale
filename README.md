@@ -8,6 +8,8 @@ Major Topics:
  - introduce the idea of ***crowd sale*** contracts for token distribution 
  - reinforce & practice contract inheritance, overriding functions (use of super)
  - working with **.new()** and **.deployed()** within test scripts
+ - basic event listeners 
+ - deployment to testnet (Rinkeby)
 
  ## Design
 
@@ -15,6 +17,6 @@ Major Topics:
 
  ## UI
 
- INSERT UI HERE
+![](public/UI.png)
 
 

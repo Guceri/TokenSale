@@ -2,7 +2,7 @@ require('babel-register');
 require('babel-polyfill');
 require('dotenv').config();
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const mnemonic = process.env.MNEMONIC;
+const mnemonic = process.env.MNEMONIC;//metamask mnemonic
 
 module.exports = {
   networks: {
@@ -18,7 +18,7 @@ module.exports = {
       confirmations: 0,    
       timeoutBlocks: 200,  
       skipDryRun: true     
-    },
+    }
   },
   contracts_directory: './src/contracts/',
   contracts_build_directory: './src/abis/',
