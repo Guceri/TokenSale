@@ -64,6 +64,7 @@ class App extends Component {
       const account = await accounts[0]
       if(typeof account !== 'undefined'){
         this.setState({ account })
+        this.updateUserTokens()
       } else {
         //make metaMask pop up to log into
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
